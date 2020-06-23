@@ -18,8 +18,8 @@ public class MessageCreator {
         return -1;
     }
 
-    public static String buildWithSn(int port) {
-        return SN_HEADER + port;
+    public static String buildWithSn(String sn) {
+        return SN_HEADER + sn;
     }
 
     public static String parseSn(String data) {
