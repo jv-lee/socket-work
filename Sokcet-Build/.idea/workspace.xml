@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac81127a-3cdc-4ec5-9f20-a8109d8fb187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/src/main/java/UDPProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/src/main/java/UDPSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocketBuild/build.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Socket-UDP/src/main/java/MessageCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
