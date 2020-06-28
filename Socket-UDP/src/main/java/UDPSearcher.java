@@ -48,7 +48,7 @@ public class UDPSearcher {
 
 
         //构建一份请求数据
-        String requestData = MessageCreator.buildeWithPort(LISTEN_PORT);
+        String requestData = MessageCreator.buildWithPort(LISTEN_PORT);
         byte[] requestBytes = requestData.getBytes();
         DatagramPacket requestPacket = new DatagramPacket(requestBytes, requestBytes.length);
 

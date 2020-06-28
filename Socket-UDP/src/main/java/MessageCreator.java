@@ -7,7 +7,7 @@ public class MessageCreator {
     private static final String SN_HEADER = "收到暗号，我是（SN）:";
     private static final String PORT_HEADER = "这是暗号，请回电端口(Port):";
 
-    public static String buildeWithPort(int port) {
+    public static String buildWithPort(int port) {
         return PORT_HEADER + port;
     }
 
