@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc37d76b-1786-4270-8fbb-41dcb9401393" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokcet-Build/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokcet-Build/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -48,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+            <state relative-caret-position="476">
+              <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -118,6 +108,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
@@ -153,12 +144,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593592769518</updated>
-      <workItem from="1593592773022" duration="2462000" />
+      <workItem from="1593592773022" duration="3856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2462000" />
+    <option name="totallyTimeSpent" value="3856000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="6" />
@@ -212,8 +203,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+        <state relative-caret-position="476">
+          <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
         </state>
       </provider>
     </entry>

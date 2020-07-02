@@ -65,7 +65,7 @@ public class Client {
 
     private static void initSocket(Socket socket) throws SocketException {
         //设置读取超时时间为2秒
-        socket.setSoTimeout(3000);
+        socket.setSoTimeout(2000);
 
         //是否复用未完全关闭的Socket地址，对于指定bind操作后的套接字有效
         socket.setReuseAddress(true);
@@ -88,6 +88,9 @@ public class Client {
         //设置接收发送缓冲器大小
         socket.setReceiveBufferSize(64 * 1024 * 1024);
         socket.setSendBufferSize(64 * 1024 * 1024);
+
+        //设置性能参数：短链接，延迟，带宽的相对重要性 (发送文件 2 1 2) （即时数据 1 1 0） （均衡发送 1 1 1）
+        socket.setPerformancePreferences(1, 1, 1);
     }
 
     private static void todo(Socket client) throws IOException {
