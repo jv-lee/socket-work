@@ -13,7 +13,7 @@ import java.net.Socket;
  * @description 服务器端
  */
 public class Server {
-    private static final int PORT = 20000;
+    private static final int PORT = 30000;
 
     public static void main(String[] args) throws IOException {
         ServerSocket server = createServerSocket();
@@ -86,7 +86,8 @@ public class Server {
 
                 int readCount = is.read(buffer);
                 if (readCount > 0) {
-                    System.out.println("收到数据长度：" + readCount + " 数据：" + Array.getByte(buffer,0));
+                    int value = Tools.byteArrayToInt(buffer);
+                    System.out.println("收到数据长度：" + readCount + " 数据：" + value);
                     //有数据的情况下 回送byte数据
                     os.write(buffer, 0, readCount);
                 } else {

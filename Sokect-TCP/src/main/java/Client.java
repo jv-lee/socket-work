@@ -7,7 +7,7 @@ import java.net.*;
  * @description 客户端
  */
 public class Client {
-    private static final int PORT = 20000;
+    private static final int PORT = 30000;
     private static final int LOCAL_PORT = 20001;
 
     public static void main(String[] args) throws IOException {
@@ -107,13 +107,16 @@ public class Client {
         InputStream is = client.getInputStream();
         byte[] buffer = new byte[128];
 
+        byte[] ints = Tools.intToByteArray(233233233);
+
         //发送1个字节到服务端 传输byte数据
-        os.write(new byte[]{1});
+        os.write(ints);
 
         //接受服务端返回的字节数据
         int read = is.read(buffer);
         if (read > 0) {
-            System.out.println("收到的长度：" + read + " 数据：" + new String(buffer, 0, read));
+            int value = Tools.byteArrayToInt(buffer);
+            System.out.println("收到的长度：" + read + " 数据：" + value);
         } else {
             System.out.println("没收到的长度：" + read);
         }
