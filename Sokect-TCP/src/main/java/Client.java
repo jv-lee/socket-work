@@ -113,11 +113,11 @@ public class Client {
         byteBuffer.put((byte) 126);
 
         //char (占用1位)
-        char c = 124;
-        byteBuffer.put((byte) c);
+        char c = 'a';
+        byteBuffer.putChar(c);
 
         //int (占用4位)
-        int i = 2332332;
+        int i = 2323123;
         byteBuffer.putInt(i);
 
         //boolean (占用1位)
@@ -125,7 +125,7 @@ public class Client {
         byteBuffer.put(b ? (byte) 1 : (byte) 0);
 
         //Long
-        long l = 283283828;
+        long l = 298789739;
         byteBuffer.putLong(l);
 
         //float
@@ -133,11 +133,11 @@ public class Client {
         byteBuffer.putFloat(f);
 
         //double
-        double d = 13.1314031235;
+        double d = 13.31241248782973;
         byteBuffer.putDouble(d);
 
         //String (可变的)
-        String str = "Hello你好~";
+        String str = "Hello你好!";
         byteBuffer.put(str.getBytes());
 
 

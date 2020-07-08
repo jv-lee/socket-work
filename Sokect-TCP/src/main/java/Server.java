@@ -6,6 +6,7 @@ import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 
 /**
  * @author jv.lee
@@ -82,19 +83,58 @@ public class Server {
                 OutputStream os = socket.getOutputStream();
                 InputStream is = socket.getInputStream();
 
-                byte[] buffer = new byte[128];
+                byte[] buffer = new byte[256];
 
                 int readCount = is.read(buffer);
-                if (readCount > 0) {
-                    int value = Tools.byteArrayToInt(buffer);
-                    System.out.println("收到数据长度：" + readCount + " 数据：" + value);
-                    //有数据的情况下 回送byte数据
-                    os.write(buffer, 0, readCount);
-                } else {
-                    System.out.println("没收到数据长度：" + readCount);
-                    //没有数据回送0
-                    os.write(new byte[]{0});
-                }
+                ByteBuffer byteBuffer = ByteBuffer.wrap(buffer, 0, readCount);
+
+                //byte
+                byte be = byteBuffer.get();
+
+                //char
+                char c = byteBuffer.getChar();
+
+                //int
+                int i = byteBuffer.getInt();
+
+                //bool
+                boolean b = byteBuffer.get() == 1;
+
+                //long
+                long l = byteBuffer.getLong();
+
+                //float
+                float f = byteBuffer.getFloat();
+
+                //double
+                double d = byteBuffer.getDouble();
+
+                //String
+                int pos = byteBuffer.position();
+                String str = new String(buffer, pos, readCount - pos - 1);
+
+                System.out.println("收到数量:" + readCount + " 数据:" + "\n"
+                        + be + "\n"
+                        + c + "\n"
+                        + i + "\n"
+                        + b + "\n"
+                        + l + "\n"
+                        + f + "\n"
+                        + d + "\n"
+                        + str + "\n");
+
+                os.write(buffer, 0, readCount);
+
+//                if (readCount > 0) {
+//                    int value = Tools.byteArrayToInt(buffer);
+//                    System.out.println("收到数据长度：" + readCount + " 数据：" + value);
+//                    //有数据的情况下 回送byte数据
+//                    os.write(buffer, 0, readCount);
+//                } else {
+//                    System.out.println("没收到数据长度：" + readCount);
+//                    //没有数据回送0
+//                    os.write(new byte[]{0});
+//                }
 
                 os.close();
                 is.close();
