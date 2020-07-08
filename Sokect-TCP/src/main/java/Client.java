@@ -93,34 +93,33 @@ public class Client {
         socket.setPerformancePreferences(1, 1, 1);
     }
 
+    /**
+     * 最基本的发送数据，接收服务端数据
+     *
+     * @param client
+     * @throws IOException
+     */
     private static void todo(Socket client) throws IOException {
-        //构建键盘输入流
-        InputStream in = System.in;
-        BufferedReader input = new BufferedReader(new InputStreamReader(in));
-
-        //得到Socket输出流，并转换为打印流
+        //得到Socket输出流
         OutputStream os = client.getOutputStream();
-        PrintStream socketPrintStream = new PrintStream(os);
 
-        //得到Socket输入流,并转换为BufferReader
-        InputStream inputStream = client.getInputStream();
-        BufferedReader socketBufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        //得到Socket输入流
+        InputStream is = client.getInputStream();
+        byte[] buffer = new byte[128];
 
-        boolean flag = true;
-        do {
-            //键盘读取一行
-            String str = input.readLine();
-            //发送到服务器
-            socketPrintStream.println(str);
+        //发送1个字节到服务端
+        os.write(new byte[]{1});
 
-            //从服务器取一行
-            String echo = socketBufferedReader.readLine();
-            if ("bye".equalsIgnoreCase(echo)) {
-                flag = false;
-            } else {
-                System.out.println(echo);
-            }
-        } while (flag);
+        //接受服务端返回的字节数据
+        int read = is.read(buffer);
+        if (read > 0) {
+            System.out.println("收到的长度：" + read + " 数据：" + new String(buffer, 0, read));
+        } else {
+            System.out.println("没收到的长度：" + read);
+        }
+
+        os.close();
+        is.close();
     }
 
 }
