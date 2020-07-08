@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
 import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -85,7 +86,7 @@ public class Server {
 
                 int readCount = is.read(buffer);
                 if (readCount > 0) {
-                    System.out.println("收到数据长度：" + readCount + " 数据：" + new String(buffer, 0, readCount));
+                    System.out.println("收到数据长度：" + readCount + " 数据：" + Array.getByte(buffer,0));
                     //有数据的情况下 回送数据
                     os.write(buffer, 0, readCount);
                 } else {
