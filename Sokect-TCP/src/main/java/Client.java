@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 
 /**
  * @author jv.lee
@@ -105,21 +106,56 @@ public class Client {
 
         //得到Socket输入流
         InputStream is = client.getInputStream();
-        byte[] buffer = new byte[128];
+        byte[] buffer = new byte[256];
+        ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
 
-        byte[] ints = Tools.intToByteArray(233233233);
+        //byte (占用1位)
+        byteBuffer.put((byte) 126);
 
-        //发送1个字节到服务端 传输byte数据
-        os.write(ints);
+        //char (占用1位)
+        char c = 124;
+        byteBuffer.put((byte) c);
+
+        //int (占用4位)
+        int i = 2332332;
+        byteBuffer.putInt(i);
+
+        //boolean (占用1位)
+        boolean b = true;
+        byteBuffer.put(b ? (byte) 1 : (byte) 0);
+
+        //Long
+        long l = 283283828;
+        byteBuffer.putLong(l);
+
+        //float
+        float f = 12.345f;
+        byteBuffer.putFloat(f);
+
+        //double
+        double d = 13.1314031235;
+        byteBuffer.putDouble(d);
+
+        //String (可变的)
+        String str = "Hello你好~";
+        byteBuffer.put(str.getBytes());
+
+
+        os.write(buffer, 0, byteBuffer.position() + 1);
+//        byte[] ints = Tools.intToByteArray(233233233);
+//
+//        //发送1个字节到服务端 传输byte数据
+//        os.write(ints);
 
         //接受服务端返回的字节数据
         int read = is.read(buffer);
-        if (read > 0) {
-            int value = Tools.byteArrayToInt(buffer);
-            System.out.println("收到的长度：" + read + " 数据：" + value);
-        } else {
-            System.out.println("没收到的长度：" + read);
-        }
+        System.out.println("收到的长度：" + read);
+//        if (read > 0) {
+//            int value = Tools.byteArrayToInt(buffer);
+//            System.out.println("收到的长度：" + read + " 数据：" + value);
+//        } else {
+//            System.out.println("没收到的长度：" + read);
+//        }
 
         os.close();
         is.close();
