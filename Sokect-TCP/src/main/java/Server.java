@@ -87,7 +87,7 @@ public class Server {
                 int readCount = is.read(buffer);
                 if (readCount > 0) {
                     System.out.println("收到数据长度：" + readCount + " 数据：" + Array.getByte(buffer,0));
-                    //有数据的情况下 回送数据
+                    //有数据的情况下 回送byte数据
                     os.write(buffer, 0, readCount);
                 } else {
                     System.out.println("没收到数据长度：" + readCount);

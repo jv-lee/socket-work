@@ -107,7 +107,7 @@ public class Client {
         InputStream is = client.getInputStream();
         byte[] buffer = new byte[128];
 
-        //发送1个字节到服务端
+        //发送1个字节到服务端 传输byte数据
         os.write(new byte[]{1});
 
         //接受服务端返回的字节数据
