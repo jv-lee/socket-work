@@ -1,7 +1,6 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -65,13 +64,8 @@ public class Server {
         serverSocket.setPerformancePreferences(1, 1, 1);
     }
 
-    private void todo(Socket client) {
-
-    }
-
     private static class ClientHandler extends Thread {
         private Socket socket;
-        private boolean flag = true;
 
         ClientHandler(Socket socket) {
             this.socket = socket;
@@ -83,26 +77,25 @@ public class Server {
             System.out.println("新客户端连接：" + socket.getInetAddress() + ":" + socket.getPort());
 
             try {
-                //得到打印流，用于数据输出；服务器回送数据使用
-                PrintStream socketOutput = new PrintStream(socket.getOutputStream());
-                BufferedReader socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                //得到套接字流
+                OutputStream os = socket.getOutputStream();
+                InputStream is = socket.getInputStream();
 
-                do {
-                    //从客户端获取数据
-                    String str = socketInput.readLine();
-                    if ("bye".equalsIgnoreCase(str)) {
-                        flag = false;
-                        //回送一条数据
-                        socketOutput.println("bye");
-                    } else {
-                        System.out.println(str);
-                        socketOutput.println("回送：" + str.length());
-                    }
+                byte[] buffer = new byte[128];
 
-                } while (flag);
+                int readCount = is.read(buffer);
+                if (readCount > 0) {
+                    System.out.println("收到数据长度：" + readCount + " 数据：" + new String(buffer, 0, readCount));
+                    //有数据的情况下 回送数据
+                    os.write(buffer, 0, readCount);
+                } else {
+                    System.out.println("没收到数据长度：" + readCount);
+                    //没有数据回送0
+                    os.write(new byte[]{0});
+                }
 
-                socketInput.close();
-                socketOutput.close();
+                os.close();
+                is.close();
 
             } catch (Exception e) {
                 System.out.println("连接异常：" + e.getMessage());
