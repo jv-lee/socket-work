@@ -27,13 +27,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7a558bb-5091-4cfa-8992-d0468fe28f69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server$ClientHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/ClientSearcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/bean/ServerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/clink/net/Clink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/clink/net/utils/ByteUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/CommandConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/TCPConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/UDPConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/server/ServerProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +170,16 @@
     <MESSAGE value="添加 MessageCreator 消息解码类." />
     <MESSAGE value="提交局域网搜索案例" />
     <option name="LAST_COMMIT_MESSAGE" value="提交局域网搜索案例" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1594263034046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594263034046" />
+    <state x="334" y="203" key="new project wizard" timestamp="1594263049021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="203" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1594263049021" />
   </component>
   <component name="masterDetails">
     <states>
