@@ -1,9 +1,9 @@
 package client;
 
 import client.bean.ServerInfo;
-import clink.net.utils.ByteUtils;
 import constants.CommandConstants;
 import constants.UDPConstants;
+import net.utils.ByteUtils;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

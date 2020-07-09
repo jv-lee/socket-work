@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac81127a-3cdc-4ec5-9f20-a8109d8fb187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules/Socket-UDP_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/src/main/java/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -52,8 +48,6 @@
               <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#702#703#0" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,6 +101,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,18 +128,10 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Sokcet-Build" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sokcet-Build" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -180,16 +168,18 @@
       <updated>1592835585534</updated>
       <workItem from="1592835589095" duration="27000" />
       <workItem from="1592835708544" duration="6573000" />
+      <workItem from="1594302008246" duration="69000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6600000" />
+    <option name="totallyTimeSpent" value="6669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -228,9 +218,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/classes/java/main/Client.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -240,6 +227,9 @@
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -257,8 +247,6 @@
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
           </folding>
         </state>
       </provider>
