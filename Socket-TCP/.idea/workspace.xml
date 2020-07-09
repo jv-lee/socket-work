@@ -2,62 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b7d3361-f6f4-4344-9534-39ee2e091f92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PointToPoint/.idea/PointToPoint.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PointToPoint/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/.idea/UDP-Search.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PointToPoint/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Socket-UDP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokcet-Build/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokcet-Build/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokcet-Build/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokcet-Build/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokcet-Build/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokcet-Build/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server$ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Tools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/branch/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/branch/Server$ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/branch/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/src/main/java/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/src/main/java/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/src/main/java/Tools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UDP-Search/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UDP-Search/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/TCPClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/TCPClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/UDPSearcher$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/UDPSearcher$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/bean/ServerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint/build/classes/java/main/client/bean/ServerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,7 +36,7 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Tools.java">
           <provider selected="true" editor-type-id="text-editor" />
@@ -119,6 +76,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -149,7 +107,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,30 +146,23 @@
       <option name="presentableId" value="Default" />
       <updated>1594302416571</updated>
       <workItem from="1594302420174" duration="25000" />
+      <workItem from="1594309929616" duration="640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25000" />
+    <option name="totallyTimeSpent" value="665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.3291262" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -220,18 +170,25 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="10" visible="true" weight="0.3291262" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Flutter Inspector" order="5" />
+      <window_info anchor="right" id="Flutter Outline" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="11" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
