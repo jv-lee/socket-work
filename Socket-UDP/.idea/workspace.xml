@@ -26,36 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7a558bb-5091-4cfa-8992-d0468fe28f69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_7_6_9_37__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Client.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server$ClientHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sokect-TCP/build/classes/java/main/Server.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/ClientSearcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/client/bean/ServerInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/clink/net/Clink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/clink/net/utils/ByteUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/CommandConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/TCPConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/constants/UDPConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UDP-Search/src/main/java/server/ServerProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sokect-TCP/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b7a558bb-5091-4cfa-8992-d0468fe28f69" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
