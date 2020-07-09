@@ -11,6 +11,8 @@ public class Server {
 
         if (!isSucceed) {
             System.out.println("Start TCP server failed!");
+        }else{
+            System.out.println("Start TCP server success!");
         }
         UDPProvider.start(TCPConstants.PORT_SERVER);
 

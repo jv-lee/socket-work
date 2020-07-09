@@ -19,7 +19,7 @@ public class TCPClient {
         socket.setSoTimeout(3000);
 
         //连接本地，端口2000；超时时间3000ms
-        socket.connect(new InetSocketAddress(Inet4Address.getByName(info.getAddress()), info.getPort()));
+        socket.connect(new InetSocketAddress(Inet4Address.getByName(info.getAddress()), info.getPort()), 3000);
 
         System.out.println("已发起服务器连接，并进入后续流程～");
         System.out.println("客户端信息：" + socket.getLocalAddress() + ":" + socket.getLocalPort());
@@ -29,7 +29,7 @@ public class TCPClient {
             //发送数据
             todo(socket);
         } catch (Exception e) {
-            System.out.println("异常关闭");
+            System.out.println("异常关闭:");
         }
 
         //释放资源

@@ -66,7 +66,7 @@ public class UDPProvider {
                     //是否为有效数据， 客户端发送数据必须带有请求头+2个字节的sort common指令 及4个字节int的回送端口 && 数据开头必须为请求头口令
                     boolean isValid = clientDataLen >= (UDPConstants.HEADER.length + 2 + 4) && ByteUtils.startsWith(clientData, UDPConstants.HEADER);
 
-                    System.out.println("ServerProvider receiver form ip:" + clientIp + " port:" + clientPort + " dataValid:" + isValid);
+                    System.out.println("ServerProvider receiver form " + clientIp + ":" + clientPort + " dataValid:" + isValid);
                     if (!isValid) {
                         //无效继续
                         continue;
@@ -92,7 +92,7 @@ public class UDPProvider {
                         //直接根据发送者构建一份回送信息
                         DatagramPacket responsePacket = new DatagramPacket(buffer, len, receivePack.getAddress(), responsePort);
                         ds.send(responsePacket);
-                        System.out.println("ServerProvider response to :" + clientIp + ":" + clientPort + " dataLen:" + len);
+                        System.out.println("ServerProvider response to :" + clientIp + ":" + port + " dataLen:" + len);
                     } else {
                         System.out.println("ServerProvider receive cmd nonsupport; cmd:" + cmd + " port:" + port);
                     }
