@@ -80,12 +80,13 @@ public class TCPServer {
                     clientHandler = new ClientHandler(client, handler -> {
                         clientHandlers.remove(handler);
                     });
+                    //读取数据并打印
+                    clientHandler.readToPrint();
+                    clientHandlers.add(clientHandler);
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("客户端连接异常：" + e.getMessage());
                 }
-                //读取数据并打印
-                clientHandler.readToPrint();
             } while (!done);
 
             System.out.println("服务器已关闭!");
