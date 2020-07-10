@@ -2,7 +2,9 @@ package server;
 
 import constants.TCPConstants;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Server {
     public static void main(String[] args) {
@@ -11,14 +13,20 @@ public class Server {
 
         if (!isSucceed) {
             System.out.println("Start TCP server failed!");
-        }else{
+        } else {
             System.out.println("Start TCP server success!");
         }
         UDPProvider.start(TCPConstants.PORT_SERVER);
 
         try {
             //服务端读取任意输入操作 结束服务监听
-            System.in.read();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            String str;
+            do {
+                str = bufferedReader.readLine();
+                tcpServer.broadcast(str);
+            } while (!"00bye00".equalsIgnoreCase(str));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
