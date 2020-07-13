@@ -8,6 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/lib-clink" />
+            <option value="$PROJECT_DIR$/sample-client" />
+            <option value="$PROJECT_DIR$/sample-server" />
+            <option value="$PROJECT_DIR$/smaple-foo" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

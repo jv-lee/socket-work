@@ -20,7 +20,7 @@ public class TCPClient {
         Socket socket = new Socket();
 
         //连接本地，端口2000；超时时间3000ms 应使用info获取的address ，但是mac会直接把地址转换成 127.0.0.1 本地地址 所以直接使用获取本地ipv4 address地址
-        socket.connect(new InetSocketAddress(Inet4Address.getByName(info.getAddress()), info.getPort()), 2000);
+        socket.connect(new InetSocketAddress(Inet4Address.getLocalHost(), info.getPort()), 2000);
 
 
         System.out.println("已发起服务器连接，并进入后续流程～");

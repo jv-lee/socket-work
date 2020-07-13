@@ -71,7 +71,7 @@ public class TCPServer implements ClientHandler.ClientHandlerCallback {
         forwardingThreadPoolExecutor.execute(() -> {
             synchronized (TCPServer.this) {
                 for (ClientHandler clientHandler : clientHandlers) {
-                    if (clientHandler.equals(clientHandler)) {
+                    if (clientHandler.equals(handler)) {
                         //跳过自己
                         continue;
                     }
