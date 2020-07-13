@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4d50d8f-91af-480d-a1a6-b832dd19fd52" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/artifacts/sample_client_main_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/artifacts/sample_server_main_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chatroom-Simple/sample-client/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Chatroom-Simple/sample-server/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/sample-client/src/main/java/net/lee/chat/TCPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/sample-client/src/main/java/net/lee/chat/TCPClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/sample-server/src/main/java/net/lee/chat/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/sample-server/src/main/java/net/lee/chat/TCPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/client/TCPClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="75">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -196,12 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594310791884</updated>
-      <workItem from="1594310793045" duration="1412000" />
+      <workItem from="1594310793045" duration="1588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1412000" />
+    <option name="totallyTimeSpent" value="1588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="0" />
@@ -224,7 +209,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3291262" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3291262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -263,8 +248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/client/TCPClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
