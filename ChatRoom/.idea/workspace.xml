@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="sample-client_main:jar" />
+      <artifact name="sample-server_main:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="437fadd7-72b3-454a-b7cb-5d29cb111482" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Chatroom-Simple/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatroom-Simple/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PointToPoint-Pro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PointToPoint-Pro/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="437fadd7-72b3-454a-b7cb-5d29cb111482" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -49,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sample-client/src/main/java/com/lee/chat/TCPClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,15 +82,6 @@
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/artifacts/sample_client_main_jar.xml" />
-        <option value="$PROJECT_DIR$/.idea/artifacts/sample_server_main_jar.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1920" />
@@ -107,31 +101,6 @@
               <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatRoom" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="sample_client_main_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="sample_server_main_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -140,6 +109,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
@@ -182,15 +152,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594646041406</updated>
-      <workItem from="1594646044449" duration="922000" />
+      <workItem from="1594646044449" duration="1205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922000" />
+    <option name="totallyTimeSpent" value="1205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1122" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -385,8 +356,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sample-client/src/main/java/com/lee/chat/TCPClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="198">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
