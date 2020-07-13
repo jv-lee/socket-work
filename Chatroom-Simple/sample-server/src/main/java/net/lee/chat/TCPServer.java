@@ -7,15 +7,22 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class TCPServer {
+public class TCPServer implements ClientHandler.ClientHandlerCallback {
     private final int port;
     private ClientListener mListener;
+    //创建线程安全的List 只能解决 remove 时 add不会出现问题. 解决遍历问题需要使用同步块
     private List<ClientHandler> clientHandlers = new ArrayList<>();
+    private final ExecutorService forwardingThreadPoolExecutor;
 
     public TCPServer(int port) {
         this.port = port;
+        //转发线程池
+        this.forwardingThreadPoolExecutor = Executors.newSingleThreadExecutor();
     }
 
     public boolean start() {
@@ -34,18 +41,45 @@ public class TCPServer {
         if (mListener != null) {
             mListener.exit();
         }
-
-        for (ClientHandler clientHandler : clientHandlers) {
-            clientHandler.exit();
+        synchronized (TCPServer.this) {
+            for (ClientHandler clientHandler : clientHandlers) {
+                clientHandler.exit();
+            }
+            clientHandlers.clear();
         }
-
-        clientHandlers.clear();
+        //停止线程池
+        forwardingThreadPoolExecutor.shutdownNow();
     }
 
-    public void broadcast(String str) {
+    public synchronized void broadcast(String str) {
         for (ClientHandler clientHandler : clientHandlers) {
             clientHandler.send(str);
         }
+    }
+
+    @Override
+    public synchronized void onSelfClosed(ClientHandler handler) {
+        clientHandlers.remove(handler);
+    }
+
+    @Override
+    public void onNewMessageArrived(final ClientHandler handler, final String msg) {
+        //打印消息
+        System.out.println("Received-" + handler.getClientInfo() + ":" + msg);
+
+        //异步提交转发任务
+        forwardingThreadPoolExecutor.execute(() -> {
+            synchronized (TCPServer.this) {
+                for (ClientHandler clientHandler : clientHandlers) {
+                    if (clientHandler.equals(clientHandler)) {
+                        //跳过自己
+                        continue;
+                    }
+                    //对其他客户端发送消息
+                    clientHandler.send(msg);
+                }
+            }
+        });
     }
 
     private class ClientListener extends Thread {
@@ -75,12 +109,13 @@ public class TCPServer {
                 //客户端构建异步线程
                 ClientHandler clientHandler = null;
                 try {
-                    clientHandler = new ClientHandler(client, handler -> {
-                        clientHandlers.remove(handler);
-                    });
+                    clientHandler = new ClientHandler(client, TCPServer.this);
                     //读取数据并打印
                     clientHandler.readToPrint();
-                    clientHandlers.add(clientHandler);
+                    //添加同步处理
+                    synchronized (TCPServer.this) {
+                        clientHandlers.add(clientHandler);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("客户端连接异常：" + e.getMessage());
