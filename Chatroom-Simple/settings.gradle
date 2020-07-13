@@ -1,2 +1,6 @@
 rootProject.name = 'Chatroom-Simple'
+include 'lib-clink'
+include 'smaple-foo'
+include 'sample-client'
+include 'sample-server'
 
