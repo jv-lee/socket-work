@@ -1,7 +1,6 @@
 package com.lee.chat;
 
 
-
 import com.lee.chat.bean.ServerInfo;
 import com.lee.chat.utils.CloseUtils;
 
@@ -17,7 +16,27 @@ import java.net.SocketTimeoutException;
  * @description
  */
 public class TCPClient {
-    public static void linkWith(ServerInfo info) throws IOException {
+    private final Socket socket;
+    private final ReadHandler readHandler;
+    private final PrintStream printStream;
+
+    public TCPClient(Socket socket, ReadHandler readHandler) throws IOException {
+        this.socket = socket;
+        this.readHandler = readHandler;
+        this.printStream = new PrintStream(socket.getOutputStream());
+    }
+
+    public void exit() {
+        readHandler.exit();
+        CloseUtils.close(printStream);
+        CloseUtils.close(socket);
+    }
+
+    public void send(String msg) {
+        printStream.println(msg);
+    }
+
+    public static TCPClient startWith(ServerInfo info) throws IOException {
         Socket socket = new Socket();
 
         //连接本地，端口2000；超时时间3000ms 应使用info获取的address ，但是mac会直接把地址转换成 127.0.0.1 本地地址 所以直接使用获取本地ipv4 address地址
@@ -33,44 +52,13 @@ public class TCPClient {
             ReadHandler readHandler = new ReadHandler(socket.getInputStream());
             readHandler.start();
 
-            //发送数据
-            write(socket);
-
-            //退出操作
-            readHandler.exit();
+            return new TCPClient(socket, readHandler);
         } catch (Exception e) {
-            System.out.println("异常关闭:");
+            System.out.println("连接异常");
+            CloseUtils.close(socket);
         }
 
-        //释放资源
-        socket.close();
-        System.out.println("客户端已退出~");
-    }
-
-    private static void write(Socket client) throws IOException {
-        //构建键盘输入流
-        InputStream is = System.in;
-        BufferedReader input = new BufferedReader(new InputStreamReader(is));
-
-        //得到Socket输出流
-        OutputStream outputStream = client.getOutputStream();
-        PrintStream socketPrintStream = new PrintStream(outputStream);
-
-        boolean flag = true;
-
-        do {
-            //键盘读取一行
-            String str = input.readLine();
-            //发送到服务器
-            socketPrintStream.println(str);
-
-            if ("00bye00".equalsIgnoreCase(str)) {
-                break;
-            }
-
-        } while (true);
-
-        socketPrintStream.close();
+        return null;
     }
 
     static class ReadHandler extends Thread {
