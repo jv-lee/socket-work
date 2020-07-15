@@ -112,13 +112,15 @@ public class TCPServer implements ClientHandler.ClientHandlerCallback {
             super.run();
             Selector selector = TCPServer.this.selector;
             System.out.println("服务器准备就绪~");
-            //等待客户端连接
             do {
                 try {
+                    //等待客户端连接
                     if (selector.select() == 0) {
                         if (done) break;
+                        continue;
                     }
 
+                    //获取索引 判断是否有链接
                     Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
                     while (iterator.hasNext()) {
                         if (done) break;
