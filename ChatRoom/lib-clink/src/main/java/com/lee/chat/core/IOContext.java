@@ -3,19 +3,19 @@ package com.lee.chat.core;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class IoContext implements Closeable {
-    private static IoContext INSTANCE;
-    private final IoProvider ioProvider;
+public class IOContext implements Closeable {
+    private static IOContext INSTANCE;
+    private final IOProvider ioProvider;
 
-    private IoContext(IoProvider ioProvider) {
+    private IOContext(IOProvider ioProvider) {
         this.ioProvider = ioProvider;
     }
 
-    public IoProvider getIoProvider() {
+    public IOProvider getIoProvider() {
         return ioProvider;
     }
 
-    public static IoContext get() {
+    public static IOContext get() {
         return INSTANCE;
     }
 
@@ -29,18 +29,18 @@ public class IoContext implements Closeable {
     }
 
     public static class StartedBoot {
-        private IoProvider ioProvider;
+        private IOProvider ioProvider;
 
         private StartedBoot() {
         }
 
-        public StartedBoot ioProvider(IoProvider ioProvider) {
+        public StartedBoot ioProvider(IOProvider ioProvider) {
             this.ioProvider = ioProvider;
             return this;
         }
 
-        public IoContext start() {
-            INSTANCE = new IoContext(ioProvider);
+        public IOContext start() {
+            INSTANCE = new IOContext(ioProvider);
             return INSTANCE;
         }
     }

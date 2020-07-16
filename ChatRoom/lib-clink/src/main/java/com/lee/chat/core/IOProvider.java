@@ -3,7 +3,7 @@ package com.lee.chat.core;
 import java.io.Closeable;
 import java.nio.channels.SocketChannel;
 
-public interface IoProvider extends Closeable {
+public interface IOProvider extends Closeable {
 
     boolean registerInput(SocketChannel channel, HandlerInputCallback callback);
 

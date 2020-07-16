@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
-public class IoArgs {
+public class IOArgs {
     private byte[] byteBuffer = new byte[2556];
     private ByteBuffer buffer = ByteBuffer.wrap(byteBuffer);
 
@@ -23,9 +23,9 @@ public class IoArgs {
     }
 
     public interface IoArgsEventListener {
-        void onStarted(IoArgs args);
+        void onStarted(IOArgs args);
 
-        void onCompleted(IoArgs args);
+        void onCompleted(IOArgs args);
     }
 
 }
