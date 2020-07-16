@@ -183,7 +183,8 @@ public class ClientHandler {
             private final String msg;
 
             WriteRunnable(String msg) {
-                this.msg = msg;
+                //添加行结束符
+                this.msg = msg + '\n';
             }
 
             @Override
