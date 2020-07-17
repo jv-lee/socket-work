@@ -1,6 +1,7 @@
 package com.lee.chat.imple;
 
 import com.lee.chat.core.IOProvider;
+import com.lee.chat.utils.CloseUtils;
 
 import java.io.IOException;
 import java.nio.channels.ClosedChannelException;
@@ -8,6 +9,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -52,7 +54,7 @@ public class IOSelectorProvider implements IOProvider {
                 while (!isClosed.get()) {
                     try {
                         if (readSelector.select() == 0) {
-                            //TODO
+                            waitSelection(inRegInput);
                             continue;
                         }
 
@@ -78,7 +80,22 @@ public class IOSelectorProvider implements IOProvider {
             @Override
             public void run() {
                 while (!isClosed.get()) {
+                    try {
+                        if (writeSelector.select() == 0) {
+                            waitSelection(inRegOutput);
+                            continue;
+                        }
 
+                        Set<SelectionKey> selectionKeys = writeSelector.selectedKeys();
+                        for (SelectionKey selectionKey : selectionKeys) {
+                            if (selectionKey.isValid()) {
+                                handleSelection(selectionKey, selectionKey.OP_WRITE, outputCallbackMap, outputHandlerPool);
+                            }
+                        }
+                        selectionKeys.clear();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };
@@ -89,27 +106,57 @@ public class IOSelectorProvider implements IOProvider {
 
     @Override
     public boolean registerInput(SocketChannel channel, HandlerInputCallback callback) {
-        return registerSelection(channel,readSelector,SelectionKey.OP_READ,inRegInput,inputCallbackMap,callback) != null;
+        return registerSelection(channel, readSelector, SelectionKey.OP_READ, inRegInput, inputCallbackMap, callback) != null;
     }
 
     @Override
     public boolean registerOutput(SocketChannel channel, HandlerOutputCallback callback) {
-        return registerSelection(channel,writeSelector,SelectionKey.OP_WRITE,inRegOutput,outputCallbackMap,callback) != null;
+        return registerSelection(channel, writeSelector, SelectionKey.OP_WRITE, inRegOutput, outputCallbackMap, callback) != null;
     }
 
     @Override
     public void unRegisterInput(SocketChannel channel) {
-
+        unRegisterSelection(channel, readSelector, inputCallbackMap);
     }
 
     @Override
     public void unRegisterOutput(SocketChannel channel) {
-
+        unRegisterSelection(channel, writeSelector, outputCallbackMap);
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
+        if (isClosed.compareAndSet(false, true)) {
+            inputHandlerPool.shutdown();
+            inputCallbackMap.clear();
 
+            outputHandlerPool.shutdown();
+            outputCallbackMap.clear();
+
+            readSelector.wakeup();
+            writeSelector.wakeup();
+
+            CloseUtils.close(readSelector, writeSelector);
+        }
+    }
+
+    /**
+     * 等待Selection操作
+     *
+     * @param locker
+     */
+    private static void waitSelection(final AtomicBoolean locker) {
+        synchronized (locker) {
+            //当前是否为锁定状态
+            if (locker.get()) {
+                try {
+                    //锁定状态则开始等待
+                    locker.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private static SelectionKey registerSelection(SocketChannel channel, Selector selector, int registerOps, AtomicBoolean locker, HashMap<SelectionKey, Runnable> map, Runnable runnable) {
@@ -149,6 +196,19 @@ public class IOSelectorProvider implements IOProvider {
                     locker.notify();
                 } catch (Exception ignored) {
                 }
+            }
+        }
+    }
+
+    private static void unRegisterSelection(SocketChannel channel, Selector selector, Map<SelectionKey, Runnable> map) {
+        if (channel.isRegistered()) {
+            SelectionKey key = channel.keyFor(selector);
+            if (key != null) {
+                //取消所有key监听
+                key.cancel();
+                map.remove(key);
+                //通知监听下一个key
+                selector.wakeup();
             }
         }
     }
