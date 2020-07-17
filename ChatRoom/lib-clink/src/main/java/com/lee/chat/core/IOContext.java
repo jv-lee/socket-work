@@ -1,9 +1,8 @@
 package com.lee.chat.core;
 
-import java.io.Closeable;
 import java.io.IOException;
 
-public class IOContext implements Closeable {
+public class IOContext {
     private static IOContext INSTANCE;
     private final IOProvider ioProvider;
 
@@ -23,8 +22,13 @@ public class IOContext implements Closeable {
         return new StartedBoot();
     }
 
-    @Override
-    public void close() throws IOException {
+    public static void close() throws IOException {
+        if (INSTANCE != null) {
+            INSTANCE.callClose();
+        }
+    }
+
+    private void callClose() throws IOException {
         ioProvider.close();
     }
 
