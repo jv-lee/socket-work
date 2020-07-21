@@ -74,7 +74,7 @@ public class SocketChannelAdapter implements Sender, Receiver, Closeable {
 
             try {
                 //具体读取操作
-                if (args.read(channel) > 0 && listener != null) {
+                if (args.readFrom(channel) > 0 && listener != null) {
                     //读取完成回调
                     listener.onCompleted(args);
                 } else {

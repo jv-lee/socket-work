@@ -1,5 +1,7 @@
 package com.lee.chat.core;
 
+import com.lee.chat.box.StringReceivePacket;
+import com.lee.chat.box.StringSendPacket;
 import com.lee.chat.imple.SocketChannelAdapter;
 
 import java.io.Closeable;
@@ -12,6 +14,8 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
     private SocketChannel channel;
     private Sender sender;
     private Receiver receiver;
+    private SendDispatcher sendDispatcher;
+    private ReceivePacket receivePacket;
 
     public void setup(SocketChannel socketChannel) throws IOException {
         this.channel = socketChannel;
@@ -21,18 +25,11 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
 
         this.sender = adapter;
         this.receiver = adapter;
-
-        readNextMessage();
     }
 
-    private void readNextMessage() {
-        if (receiver != null) {
-            try {
-                receiver.receiveAsync(echoReceiveListener);
-            } catch (IOException e) {
-                System.out.println("开始接收数据异常：" + e.getMessage());
-            }
-        }
+    public void send(String msg) {
+        SendPacket packet = new StringSendPacket(msg);
+        sendDispatcher.send(packet);
     }
 
     @Override
@@ -45,26 +42,18 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
 
     }
 
-    /**
-     * 接收数据监听
-     */
-    private IOArgs.IoArgsEventListener echoReceiveListener = new IOArgs.IoArgsEventListener() {
-        @Override
-        public void onStarted(IOArgs args) {
-
-        }
-
-        @Override
-        public void onCompleted(IOArgs args) {
-            //打印数据
-            onReceiveNewMessage(args.bufferString());
-            //读取一下条数据
-            readNextMessage();
-        }
-    };
 
     protected void onReceiveNewMessage(String str) {
         System.out.println(key.toString() + ":" + str);
     }
 
+    private ReceiveDispatcher.ReceivePacketCallback receivePacketCallback = new ReceiveDispatcher.ReceivePacketCallback() {
+        @Override
+        public void onReceivePacketCompleted(ReceivePacket packet) {
+            if (packet instanceof StringReceivePacket) {
+                String msg = ((StringReceivePacket) packet).string();
+                onReceiveNewMessage(msg);
+            }
+        }
+    };
 }
