@@ -82,7 +82,7 @@ public class IOArgs {
     /**
      * 开始写入数据到IOArgs
      */
-    private void startWriting() {
+    public void startWriting() {
         buffer.clear();
         //定义容纳区间
         buffer.limit();
@@ -91,12 +91,13 @@ public class IOArgs {
     /**
      * 数据写完后调用
      */
-    private void finishWriting() {
+    public void finishWriting() {
         buffer.flip();
     }
 
     /**
      * 设置单次写操作的容纳区间
+     *
      * @param limit 区间大小
      */
     public void limit(int limit) {
@@ -106,6 +107,18 @@ public class IOArgs {
     public String bufferString() {
         //丢弃换行符
         return new String(byteBuffer, 0, buffer.position() - 1);
+    }
+
+    public void writeLength(int total) {
+        buffer.putInt(total);
+    }
+
+    public int readLength() {
+        return buffer.getInt();
+    }
+
+    public int capacity() {
+        return buffer.capacity();
     }
 
     public interface IoArgsEventListener {

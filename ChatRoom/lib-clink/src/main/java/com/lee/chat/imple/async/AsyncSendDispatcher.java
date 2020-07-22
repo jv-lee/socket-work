@@ -6,11 +6,14 @@ import com.lee.chat.core.SendPacket;
 import com.lee.chat.core.Sender;
 import com.lee.chat.utils.CloseUtils;
 
+import java.io.IOException;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AsyncSendDispatcher implements SendDispatcher {
+    private final AtomicBoolean isClosed = new AtomicBoolean(false);
+
     private final Sender sender;
     private final Queue<SendPacket> queue = new ConcurrentLinkedQueue<>();
     private final AtomicBoolean isSending = new AtomicBoolean();
@@ -70,6 +73,60 @@ public class AsyncSendDispatcher implements SendDispatcher {
 
     private void sendCurrentPacket() {
         IOArgs args = ioArgs;
+
+        //开始，清理
+        args.startWriting();
+        if (position >= total) {
+            sendNextPacket();
+            return;
+        } else if (position == 0) {
+            //首包，需要携带一个长度信息
+            args.writeLength(total);
+        }
+
+        byte[] bytes = currentPacket.bytes();
+        //把bytes的数据写入到IOArgs中去
+        int count = args.readFrom(bytes, position);
+        position += count;
+
+        //完成封装
+        args.finishWriting();
+
+        try {
+            sender.sendAsync(args, ioArgsEventListener);
+        } catch (IOException e) {
+            e.printStackTrace();
+            closeAndNotify();
+        }
     }
+
+    private void closeAndNotify() {
+        CloseUtils.close(this);
+    }
+
+    @Override
+    public void close() throws IOException {
+        if (isClosed.compareAndSet(false, true)) {
+            isSending.set(false);
+            SendPacket packet = this.currentPacket;
+            if (packet != null) {
+                currentPacket = null;
+                CloseUtils.close(packet);
+            }
+        }
+    }
+
+    private final IOArgs.IoArgsEventListener ioArgsEventListener = new IOArgs.IoArgsEventListener() {
+        @Override
+        public void onStarted(IOArgs args) {
+
+        }
+
+        @Override
+        public void onCompleted(IOArgs args) {
+            //继续发送当前包
+            sendCurrentPacket();
+        }
+    };
 
 }
