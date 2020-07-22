@@ -7,7 +7,7 @@ import java.nio.channels.SocketChannel;
 
 public class IOArgs {
     private int limit = 256;
-    private byte[] byteBuffer = new byte[2556];
+    private byte[] byteBuffer = new byte[256];
     private ByteBuffer buffer = ByteBuffer.wrap(byteBuffer);
 
     /**

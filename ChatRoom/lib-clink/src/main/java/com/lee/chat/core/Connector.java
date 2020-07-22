@@ -3,6 +3,8 @@ package com.lee.chat.core;
 import com.lee.chat.box.StringReceivePacket;
 import com.lee.chat.box.StringSendPacket;
 import com.lee.chat.imple.SocketChannelAdapter;
+import com.lee.chat.imple.async.AsyncReceiveDispatcher;
+import com.lee.chat.imple.async.AsyncSendDispatcher;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -15,6 +17,7 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
     private Sender sender;
     private Receiver receiver;
     private SendDispatcher sendDispatcher;
+    private ReceiveDispatcher receiveDispatcher;
     private ReceivePacket receivePacket;
 
     public void setup(SocketChannel socketChannel) throws IOException {
@@ -25,6 +28,12 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
 
         this.sender = adapter;
         this.receiver = adapter;
+
+        sendDispatcher = new AsyncSendDispatcher(sender);
+        receiveDispatcher = new AsyncReceiveDispatcher(receiver, receivePacketCallback);
+
+        //启动接收
+        receiveDispatcher.start();
     }
 
     public void send(String msg) {
@@ -34,7 +43,11 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
 
     @Override
     public void close() throws IOException {
-
+        receiveDispatcher.close();
+        sendDispatcher.close();
+        sender.close();
+        receiver.close();
+        channel.close();
     }
 
     @Override
@@ -47,13 +60,10 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
         System.out.println(key.toString() + ":" + str);
     }
 
-    private ReceiveDispatcher.ReceivePacketCallback receivePacketCallback = new ReceiveDispatcher.ReceivePacketCallback() {
-        @Override
-        public void onReceivePacketCompleted(ReceivePacket packet) {
-            if (packet instanceof StringReceivePacket) {
-                String msg = ((StringReceivePacket) packet).string();
-                onReceiveNewMessage(msg);
-            }
+    private ReceiveDispatcher.ReceivePacketCallback receivePacketCallback = packet -> {
+        if (packet instanceof StringReceivePacket) {
+            String msg = ((StringReceivePacket) packet).string();
+            onReceiveNewMessage(msg);
         }
     };
 }
