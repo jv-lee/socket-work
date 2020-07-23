@@ -7,7 +7,7 @@ import java.io.IOException;
  * 公共的数据封装
  * 提供了类型以及基本的长度的定义
  */
-public abstract class Packet<T extends Closeable> implements Closeable {
+public abstract class Packet<Stream extends Closeable> implements Closeable {
 
     // BYTES 类型
     public static final byte TYPE_MEMORY_BYTES = 1;
@@ -19,9 +19,9 @@ public abstract class Packet<T extends Closeable> implements Closeable {
     public static final byte TYPE_STREAM_DIRECT = 4;
 
     protected long length;
-    private T stream;
+    private Stream stream;
 
-    protected abstract T createStream();
+    protected abstract Stream createStream();
 
     /**
      * 类型，直接通过方法获得
@@ -33,7 +33,7 @@ public abstract class Packet<T extends Closeable> implements Closeable {
      */
     public abstract byte type();
 
-    protected void closeStream(T stream) throws IOException {
+    protected void closeStream(Stream stream) throws IOException {
         stream.close();
     }
 
@@ -41,7 +41,7 @@ public abstract class Packet<T extends Closeable> implements Closeable {
         return length;
     }
 
-    public final T open() {
+    public final Stream open() {
         if (stream == null) {
             stream = createStream();
         }
