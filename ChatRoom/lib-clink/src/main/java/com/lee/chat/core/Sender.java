@@ -4,5 +4,6 @@ import java.io.Closeable;
 import java.io.IOException;
 
 public interface Sender extends Closeable {
-    boolean sendAsync(IOArgs args, IOArgs.IoArgsEventListener listener) throws IOException;
+    void setSenderProcessor(IOArgs.IoArgsEventProcessor processor);
+    boolean postSendAsync() throws IOException;
 }
