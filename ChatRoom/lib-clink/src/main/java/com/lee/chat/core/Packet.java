@@ -8,18 +8,33 @@ import java.io.IOException;
  * 提供了类型以及基本的长度的定义
  */
 public abstract class Packet<T extends Closeable> implements Closeable {
-    protected byte type;
+
+    // BYTES 类型
+    public static final byte TYPE_MEMORY_BYTES = 1;
+    // String 类型
+    public static final byte TYPE_MEMORY_STRING = 2;
+    // 文件 类型
+    public static final byte TYPE_STREAM_FILE = 3;
+    //长链接流 类型
+    public static final byte TYPE_STREAM_DIRECT = 4;
+
     protected long length;
     private T stream;
 
     protected abstract T createStream();
 
+    /**
+     * 类型，直接通过方法获得
+     * {@link #TYPE_MEMORY_BYTES}
+     * {@link #TYPE_MEMORY_STRING}
+     * {@link #TYPE_STREAM_FILE}
+     * {@link #TYPE_STREAM_DIRECT}
+     * @return
+     */
+    public abstract byte type();
+
     protected void closeStream(T stream) throws IOException {
         stream.close();
-    }
-
-    public byte type() {
-        return type;
     }
 
     public long length() {
