@@ -60,10 +60,9 @@ public class Connector implements Closeable, SocketChannelAdapter.OnChannelStatu
         System.out.println(key.toString() + ":" + str);
     }
 
-    private ReceiveDispatcher.ReceivePacketCallback receivePacketCallback = packet -> {
-        if (packet instanceof StringReceivePacket) {
-            String msg = ((StringReceivePacket) packet).string();
-            onReceiveNewMessage(msg);
-        }
-    };
+    protected void onReceivePacket(ReceivePacket packet) {
+        System.out.println(key.toString() + ":[New Packet]-Type:" + packet.type() + ",Length:" + packet.length);
+    }
+
+    private ReceiveDispatcher.ReceivePacketCallback receivePacketCallback = this::onReceivePacket;
 }

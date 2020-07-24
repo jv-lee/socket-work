@@ -16,13 +16,17 @@ public class FileSendPacket extends SendPacket<FileInputStream> {
     }
 
     @Override
+    public byte type() {
+        return TYPE_STREAM_FILE;
+    }
+
+    @Override
     protected FileInputStream createStream() {
         try {
             return new FileInputStream(file);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
 }
