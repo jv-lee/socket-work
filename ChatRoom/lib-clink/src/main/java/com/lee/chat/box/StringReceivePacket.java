@@ -7,7 +7,7 @@ import java.io.ByteArrayOutputStream;
  */
 public class StringReceivePacket extends AbsByteArrayReceivePacket<String> {
 
-    public StringReceivePacket(int len) {
+    public StringReceivePacket(long len) {
         super(len);
     }
 

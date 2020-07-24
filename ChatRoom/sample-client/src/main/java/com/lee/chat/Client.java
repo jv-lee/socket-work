@@ -1,18 +1,15 @@
 package com.lee.chat;
 
-
-
 import com.lee.chat.bean.ServerInfo;
+import com.lee.chat.box.FileSendPacket;
 import com.lee.chat.core.IOContext;
 import com.lee.chat.imple.IOSelectorProvider;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Client {
     public static void main(String[] args) throws IOException {
+        File cachePath = Foo.getCacheDir("client");
         IOContext.setup()
                 .ioProvider(new IOSelectorProvider())
                 .start();
@@ -24,7 +21,7 @@ public class Client {
             TCPClient tcpClient = null;
 
             try {
-                tcpClient = TCPClient.startWith(info);
+                tcpClient = TCPClient.startWith(info, cachePath);
                 if (tcpClient == null) {
                     return;
                 }
@@ -50,15 +47,29 @@ public class Client {
         do {
             // 键盘读取一行
             String str = input.readLine();
+            if ("00bye00".equalsIgnoreCase(str)) {
+                break;
+            }
+
+            //--f url
+            if (str.startsWith("--f")) {
+                String[] array = str.split(" ");
+                if (array.length >= 2) {
+                    String filePath = array[1];
+                    File file = new File(filePath);
+                    if (file.exists() && file.isFile()) {
+                        FileSendPacket packet = new FileSendPacket(file);
+                        tcpClient.send();
+                    }
+                }
+            }
+
             // 发送到服务器 TODO 测试所以有4次发送 正常需修改为1次
             tcpClient.send(str);
             tcpClient.send(str);
             tcpClient.send(str);
             tcpClient.send(str);
 
-            if ("00bye00".equalsIgnoreCase(str)) {
-                break;
-            }
         } while (true);
     }
 

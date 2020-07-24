@@ -4,10 +4,11 @@ package com.lee.chat.handler;
 import com.lee.chat.core.Connector;
 import com.lee.chat.utils.CloseUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
 
-public class ClientHandler extends Connector{
+public class ClientHandler extends Connector {
     private final ClientHandlerCallback clientHandlerCallback;
     private final String clientInfo;
 
@@ -29,7 +30,12 @@ public class ClientHandler extends Connector{
     @Override
     protected void onReceiveNewMessage(String str) {
         super.onReceiveNewMessage(str);
-        clientHandlerCallback.onNewMessageArrived(this,str);
+        clientHandlerCallback.onNewMessageArrived(this, str);
+    }
+
+    @Override
+    protected File createNewReceiveFile() {
+        return null;
     }
 
     public void exit() {

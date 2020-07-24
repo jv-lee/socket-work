@@ -1,10 +1,7 @@
 package com.lee.chat.imple.async;
 
 import com.lee.chat.box.StringReceivePacket;
-import com.lee.chat.core.IOArgs;
-import com.lee.chat.core.ReceiveDispatcher;
-import com.lee.chat.core.ReceivePacket;
-import com.lee.chat.core.Receiver;
+import com.lee.chat.core.*;
 import com.lee.chat.utils.CloseUtils;
 
 import java.io.IOException;
@@ -20,7 +17,7 @@ public class AsyncReceiveDispatcher implements ReceiveDispatcher, IOArgs.IoArgsE
     private final ReceivePacketCallback callback;
 
     private IOArgs ioArgs = new IOArgs();
-    private ReceivePacket<?,?> packetTemp;
+    private ReceivePacket<?, ?> packetTemp;
 
     private WritableByteChannel packetChannel;
     private long total;
@@ -69,8 +66,11 @@ public class AsyncReceiveDispatcher implements ReceiveDispatcher, IOArgs.IoArgsE
     private void assemblePacket(IOArgs args) {
         if (packetTemp == null) {
             int length = args.readLength();
-            packetTemp = new StringReceivePacket(length);
+            byte type = length > 200 ? Packet.TYPE_STREAM_FILE : Packet.TYPE_MEMORY_STRING;
+
+            packetTemp = callback.onArrivedNewPacket(type, length);
             packetChannel = Channels.newChannel(packetTemp.open());
+
             total = length;
             position = 0;
         }

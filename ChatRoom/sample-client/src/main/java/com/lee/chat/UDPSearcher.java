@@ -1,7 +1,5 @@
 package com.lee.chat;
 
-
-
 import com.lee.chat.bean.ServerInfo;
 import com.lee.chat.constants.CommandConstants;
 import com.lee.chat.constants.UDPConstants;
