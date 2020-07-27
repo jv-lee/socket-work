@@ -4,6 +4,7 @@ package com.lee.chat;
 import com.lee.chat.handler.ClientHandler;
 import com.lee.chat.utils.CloseUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
@@ -18,6 +19,7 @@ import java.util.concurrent.Executors;
 
 public class TCPServer implements ClientHandler.ClientHandlerCallback {
     private final int port;
+    private final File cachePath;
     private ClientListener listener;
     //创建线程安全的List 只能解决 remove 时 add不会出现问题. 解决遍历问题需要使用同步块
     private List<ClientHandler> clientHandlers = new ArrayList<>();
@@ -25,8 +27,9 @@ public class TCPServer implements ClientHandler.ClientHandlerCallback {
     private Selector selector;
     ServerSocketChannel server;
 
-    public TCPServer(int port) {
+    public TCPServer(int port,File cachePath) {
         this.port = port;
+        this.cachePath = cachePath;
         //转发线程池
         this.forwardingThreadPoolExecutor = Executors.newSingleThreadExecutor();
     }
@@ -132,7 +135,7 @@ public class TCPServer implements ClientHandler.ClientHandlerCallback {
 
                             try {
                                 //客户端构建异步线程
-                                ClientHandler clientHandler = new ClientHandler(socketChannel, TCPServer.this);
+                                ClientHandler clientHandler = new ClientHandler(socketChannel, TCPServer.this,cachePath);
                                 //添加同步处理
                                 synchronized (TCPServer.this) {
                                     clientHandlers.add(clientHandler);

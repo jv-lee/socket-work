@@ -44,6 +44,10 @@ public abstract class Connector implements Closeable, SocketChannelAdapter.OnCha
         sendDispatcher.send(packet);
     }
 
+    public void send(SendPacket packet) {
+        sendDispatcher.send(packet);
+    }
+
     @Override
     public void close() throws IOException {
         receiveDispatcher.close();

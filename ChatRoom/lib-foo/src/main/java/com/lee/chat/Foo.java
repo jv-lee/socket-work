@@ -12,7 +12,7 @@ public class Foo {
         String path = System.getProperty("user.dir") + (File.separator + CACHE_DIR + File.separator + dir);
         File file = new File(path);
         if (!file.exists()) {
-            if (!file.mkdir()) {
+            if (!file.mkdirs()) {
                 throw new RuntimeException("Create path error:" + path);
             }
         }

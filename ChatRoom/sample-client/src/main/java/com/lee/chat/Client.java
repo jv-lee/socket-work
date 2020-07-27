@@ -59,15 +59,13 @@ public class Client {
                     File file = new File(filePath);
                     if (file.exists() && file.isFile()) {
                         FileSendPacket packet = new FileSendPacket(file);
-                        tcpClient.send();
+                        tcpClient.send(packet);
+                        continue;
                     }
                 }
             }
 
-            // 发送到服务器 TODO 测试所以有4次发送 正常需修改为1次
-            tcpClient.send(str);
-            tcpClient.send(str);
-            tcpClient.send(str);
+            // 发送字符串到服务器
             tcpClient.send(str);
 
         } while (true);

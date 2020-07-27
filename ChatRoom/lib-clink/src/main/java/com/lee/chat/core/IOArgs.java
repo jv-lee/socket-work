@@ -8,8 +8,8 @@ import java.nio.channels.SocketChannel;
 import java.nio.channels.WritableByteChannel;
 
 public class IOArgs {
-    private int limit = 5;
-    private ByteBuffer buffer = ByteBuffer.allocate(5);
+    private int limit = 256;
+    private ByteBuffer buffer = ByteBuffer.allocate(256);
 
     /**
      * 从bytes中读取数据
@@ -97,7 +97,7 @@ public class IOArgs {
     public void startWriting() {
         buffer.clear();
         //定义容纳区间
-        buffer.limit();
+        buffer.limit(limit);
     }
 
     /**

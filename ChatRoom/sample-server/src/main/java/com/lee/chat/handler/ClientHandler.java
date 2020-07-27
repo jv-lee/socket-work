@@ -1,7 +1,10 @@
 package com.lee.chat.handler;
 
 
+import com.lee.chat.Foo;
 import com.lee.chat.core.Connector;
+import com.lee.chat.core.Packet;
+import com.lee.chat.core.ReceivePacket;
 import com.lee.chat.utils.CloseUtils;
 
 import java.io.File;
@@ -11,10 +14,12 @@ import java.nio.channels.SocketChannel;
 public class ClientHandler extends Connector {
     private final ClientHandlerCallback clientHandlerCallback;
     private final String clientInfo;
+    private final File cachePath;
 
-    public ClientHandler(SocketChannel socketChannel, ClientHandlerCallback clientHandlerCallback) throws IOException {
+    public ClientHandler(SocketChannel socketChannel, ClientHandlerCallback clientHandlerCallback,File cachePath) throws IOException {
         this.clientHandlerCallback = clientHandlerCallback;
         this.clientInfo = socketChannel.getRemoteAddress().toString();
+        this.cachePath = cachePath;
 
         System.out.println("新客户端连接：" + clientInfo);
 
@@ -28,14 +33,18 @@ public class ClientHandler extends Connector {
     }
 
     @Override
-    protected void onReceiveNewMessage(String str) {
-        super.onReceiveNewMessage(str);
-        clientHandlerCallback.onNewMessageArrived(this, str);
+    protected File createNewReceiveFile() {
+        return Foo.createRandomTempFile(cachePath);
     }
 
     @Override
-    protected File createNewReceiveFile() {
-        return null;
+    protected void onReceivedPacket(ReceivePacket packet) {
+        super.onReceivedPacket(packet);
+        if (packet.type() == Packet.TYPE_MEMORY_STRING) {
+            String string = (String) packet.entity();
+            System.out.println(key.toString() + ":" + string);
+            clientHandlerCallback.onNewMessageArrived(this, string);
+        }
     }
 
     public void exit() {
