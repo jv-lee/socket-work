@@ -12,6 +12,11 @@ public abstract class SendPacket<T extends InputStream> extends Packet<T> {
         return canceled;
     }
 
-    
+    /**
+     * 设置取消发送标记
+     */
+    public void cancel() {
+        canceled = true;
+    }
 
 }

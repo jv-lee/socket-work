@@ -29,9 +29,18 @@ public abstract class Packet<Stream extends Closeable> implements Closeable {
      * {@link #TYPE_MEMORY_STRING}
      * {@link #TYPE_STREAM_FILE}
      * {@link #TYPE_STREAM_DIRECT}
+     *
      * @return
      */
     public abstract byte type();
+
+    @Override
+    public final void close() throws IOException {
+        if (stream != null) {
+            closeStream(stream);
+            stream = null;
+        }
+    }
 
     protected void closeStream(Stream stream) throws IOException {
         stream.close();
@@ -48,11 +57,13 @@ public abstract class Packet<Stream extends Closeable> implements Closeable {
         return stream;
     }
 
-    @Override
-    public final void close() throws IOException {
-        if (stream != null) {
-            closeStream(stream);
-            stream = null;
-        }
+    /**
+     * 头部额外信息，用于携带额外校验信息等
+     *
+     * @return byte 数组,最大255长度
+     */
+    public byte[] headerInfo() {
+        return null;
     }
+
 }
