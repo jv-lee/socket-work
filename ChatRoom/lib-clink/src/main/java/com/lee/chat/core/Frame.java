@@ -3,7 +3,7 @@ package com.lee.chat.core;
 /**
  * @author jv.lee
  * @date 2020-07-29
- * @description 每一帧拘束
+ * @description 每一帧数据转换类
  */
 public class Frame {
     public static final int FRAME_HEADER_LENGTH = 6;
