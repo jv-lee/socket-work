@@ -1,11 +1,13 @@
 package com.lee.chat.core;
 
+import java.io.IOException;
+
 /**
  * @author jv.lee
  * @date 2020-07-29
  * @description 每一帧数据转换类
  */
-public class Frame {
+public abstract class Frame {
     public static final int FRAME_HEADER_LENGTH = 6;
     public static final int MAX_CAPACITY = 64 * 1024 - 1; //64k - 1个字节
 
@@ -39,13 +41,35 @@ public class Frame {
         header[5] = 0;
     }
 
+    /**
+     * header[0] = 11111111 1111111 11111111 00100000 (length(00000000 00000000 0010000000 0100000000) >> 8) 向右边移动8位 强转byte后自动取末尾 8位 既位 00100000
+     * header[1] = 11111111 1111111 11111111 01000000 (length(00000000 00000000 0010000000 0100000000) 取8位 byte 即为 01000000
+     * 获取长度 合并 header[0] 和 header[1] 即为 header[0] & 0xff 运算 所有高位补齐的1 变为0 则为 00000000 00000000 00000000 00100000 << 8 = 00000000 00000000 00100000 00000000 | 00000000 00000000 00000000 01000000 = 000000000 00000000 00100000 01000000
+     *
+     * @return
+     */
     public int getBodyLength() {
-        // 00000000 | 01000000
-        // 00000000 000000000 00000000 01000000 想获得的
-        // 11111111 11111111 11111111 01000000 实际获得的
-        // 使用按位与运算 0xFF -> 00000000 00000000 00000000 11111111 -> 11111111 11111111 11111111 01000000 -> 00000000 000000000 00000000 01000000 (成功获得)
-        //最终 00000000 00000000 00000000 00000000 左移8位 00000000 00000000 00000000 + 01000000
+        // header[0] 转换为int后 自动转为 11111111 11111111 11111111 01000000 & 0xFF后为 00000000 000000000 00000000 01000000
+        // header[1] 转换为int后 自动转为 11111111 11111111 11111111 01000000 & 0xFF后为 00000000 000000000 00000000 01000000
+        //已知道 header[0]的8个位 处于 第三区间 17 - 24位 向 << 8 移动8位 为 00000000 00000000 01000000 00000000
+        //最后  00000000 00000000 01000000 00000000 | 00000000 00000000 00000000 01000000 = 00000000 00000000 01000000 01000000 即获得长度
         return ((((int) header[0]) & 0xFF) << 8) | (((int) header[1]) & 0xFF);
     }
+
+    public byte getBodyType() {
+        return header[2];
+    }
+
+    public byte getBodyFlag() {
+        return header[3];
+    }
+
+    public short getBodyIdentifier() {
+        return (short) ((short) header[4] & 0xFF);
+    }
+
+    public abstract boolean handle(IOArgs args) throws IOException;
+
+    public abstract Frame nextFrame();
 
 }
