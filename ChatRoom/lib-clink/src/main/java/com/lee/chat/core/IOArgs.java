@@ -113,7 +113,8 @@ public class IOArgs {
      * @param limit 区间大小
      */
     public void limit(int limit) {
-        this.limit = limit;
+        //判断limit 和 最大存储区间中的最小值
+        this.limit = Math.min(limit, buffer.capacity());
     }
 
     public void writeLength(int total) {
@@ -128,6 +129,10 @@ public class IOArgs {
 
     public int capacity() {
         return buffer.capacity();
+    }
+
+    public boolean remaining() {
+        return buffer.remaining() > 0;
     }
 
     /**

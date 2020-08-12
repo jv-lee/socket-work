@@ -41,6 +41,10 @@ public abstract class Frame {
         header[5] = 0;
     }
 
+    public Frame(byte[] header) {
+        System.arraycopy(header, 0, this.header, 0, FRAME_HEADER_LENGTH);
+    }
+
     /**
      * header[0] = 11111111 1111111 11111111 00100000 (length(00000000 00000000 0010000000 0100000000) >> 8) 向右边移动8位 强转byte后自动取末尾 8位 既位 00100000
      * header[1] = 11111111 1111111 11111111 01000000 (length(00000000 00000000 0010000000 0100000000) 取8位 byte 即为 01000000
