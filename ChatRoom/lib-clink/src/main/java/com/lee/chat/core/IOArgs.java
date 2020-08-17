@@ -11,10 +11,41 @@ public class IOArgs {
     private int limit = 256;
     private ByteBuffer buffer = ByteBuffer.allocate(256);
 
+
     /**
-     * 从bytes中读取数据
+     * 从byte数组中读取数据
      *
-     * @return
+     * @param bytes  数据
+     * @param offset 偏移量
+     * @param count  总长度
+     * @return 返回消费大小
+     */
+    public int readFrom(byte[] bytes, int offset, int count) {
+        int size = Math.min(count, buffer.remaining());
+        if (size <= 0) {
+            return 0;
+        }
+        buffer.put(bytes, offset, size);
+        return size;
+    }
+
+    /**
+     * 从byte数组中读取数据
+     *
+     * @param bytes  数据
+     * @param offset 偏移量
+     * @return 返回写入大小
+     */
+    public int writeTo(byte[] bytes, int offset) {
+        int size = Math.min(bytes.length - offset, buffer.remaining());
+        buffer.get(bytes, offset, size);
+        return size;
+    }
+
+    /**
+     * 从Channel中读取数据
+     *
+     * @return 返回消费大小
      */
     public int readFrom(ReadableByteChannel channel) throws IOException {
         startWriting();
@@ -133,6 +164,19 @@ public class IOArgs {
 
     public boolean remaining() {
         return buffer.remaining() > 0;
+    }
+
+    /**
+     * 填充加数据 将buffer的position移动至末尾
+     *
+     * @param size
+     * @return
+     */
+    public int fillEmpty(int size) {
+        int fillSize = Math.min(size, buffer.remaining());
+        //移动到buffer的最后 类似于填充空数据 再次取数据时 position已经定位到尾部
+        buffer.position(buffer.position() + fillSize);
+        return fillSize;
     }
 
     /**
